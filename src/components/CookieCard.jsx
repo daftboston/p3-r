@@ -1,8 +1,13 @@
-const CookieCard = () =>  {
+const CookieCard = ({dataCookie}) =>  {
+    
+    
     return (
+       
 <div>
+    <h1>{dataCookie.phrase}</h1>
+    <h1>fuente : {dataCookie.author}</h1>
 
-    <button> <i class='bx bx-shuffle'></i> click</button>
+    
 </div>
 )
 }
