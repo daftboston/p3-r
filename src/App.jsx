@@ -20,7 +20,9 @@ function App() {
 
 
   return (
-    <div className="App" style={{backgroundImage:backgrounds[0]}}>
+    <div className="App" style={{
+      backgroundImage:`url(${backgrounds[2]})`,      
+    }}>
       <CookieCard dataCookie={phrases[index]}/>
       <button onClick={changeIndex}> Probar mi suerte</button>
  
