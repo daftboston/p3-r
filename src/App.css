@@ -12,7 +12,7 @@
 }
 
 .App{
-  
+    /*codigo funcionando en css background-image: url(./assets/fondo1.png)*/
     display: flex;
     justify-content: center;
     align-items: center;
