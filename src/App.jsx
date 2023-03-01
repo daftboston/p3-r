@@ -11,22 +11,22 @@ import fondo4 from "./assets/fondo4.png"
 
 function App() {
 
-  const backgrounds = [fondo1,fondo2, fondo3, fondo4]
-  console.log(phrases.length);
+  const backgrounds = [fondo1,fondo2, fondo3, fondo4,fondo1,fondo2, fondo3, fondo4,fondo1,fondo2, fondo3, fondo4,fondo1,fondo2, fondo3]
+
+
   const [index, setindex]=useState(0)
   const changeIndex=()=>{
     setindex(Math.floor(Math.random()*phrases.length))
   }
 
 
+
   return (
     <div className="App" style={{
-      backgroundImage:`url(${backgrounds[2]})`,      
-    }}>
-      <CookieCard dataCookie={phrases[index]}/>
-      <button onClick={changeIndex}> Probar mi suerte</button>
- 
-
+        backgroundImage:`url(${backgrounds[index]})`,      
+     }}>
+         <CookieCard dataCookie={phrases[index]}/>
+         <button className='button' onClick={changeIndex}> Probar mi suerte</button>
     
     </div>
   )
