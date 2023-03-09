@@ -1,62 +1,16 @@
 import { useEffect, useState } from 'react'
-
 import './App.css'
 
 import axios from "axios"
 import Character from './components/Character'
+import Location from './components/Location'
 
 
 
 
 function App() {
 
-  const names = [ "Alan", "Vinicio", "Elizabeth", "Reinaldo", "Jose", "Frank" ]
-  const usuarios = [
-    {
-        nombre: "Susanita",
-        animalFavorito : "Gato"
-    },
-    {
-        nombre: "Pedro",
-        animalFavorito : "Gato"
-    },
-    {
-        nombre: "Carlos",
-        animalFavorito : "Perro"
-    },  
-    {
-        nombre: "Cristian",
-        animalFavorito : "Hamster"
-    },
-    {
-        nombre: "Ana",
-        animalFavorito : "Perro"
-    },  
-    {
-        nombre: "Karina",
-        animalFavorito : null
-    }, 
-    {
-        nombre: "Berenice",
-        animalFavorito : "Gato"
-    },  
-    {
-        nombre: "Salvador",
-        animalFavorito : "Conejo"
-    },  
-    {
-        nombre: "Omar",
-        animalFavorito : "Ajolote"
-    },  
-    {
-        nombre: "Carlos",
-        animalFavorito : null
-    },
-    {
-        nombre: "Lupita",
-        animalFavorito: null
-    } 
-]
+ 
 
 const [character, setCharacter] = useState([])
 
@@ -68,26 +22,54 @@ const [character, setCharacter] = useState([])
     )
  .catch ( error => console.error(error) )
  },[])
-  
 
+
+const [id, setId]= useState ("1")
+
+const[url, setUrl]=useState([])
+
+useEffect (()=>{
+axios
+.get (`https://rickandmortyapi.com/api/location/${id}`)
+.then(resp => {console.log(resp.data)
+ setId(resp.data)
+setUrl(resp.data.residents)})
+.catch ( error => console.error(error) )
+},[id])
+
+
+const searchId = (e)=>{
+    e.preventDefault()
+    //console.log(e.target[0].value);
+    setId(e.target[0].value)
+
+}
 
 
   return (
     <div className="App">
 
-      <ul>
-        {
-        names.map ((item, indice)=> <li key ={item}>{item}</li>)
-      }
-      </ul>
+        <Location data={id}/>
 
-      <ul>
-        {
-        usuarios.map (user=> <li key= {user}>{user.nombre}</li> )
-      }
+   <form onSubmit={ (e)=> searchId (e)}>
+    
+      <input type="text" placeholder='buscar id' />
+      <button>Search</button>
+
+    </form>
+     
+     <ul>
+       
+      {url.map((item,indice)=> <li>{item}</li> )}
+
      </ul>
 
 
+
+
+
+
+    {/*
      <ul>
      {
             character.map ( character => ( 
@@ -99,7 +81,10 @@ const [character, setCharacter] = useState([])
 
         }
         
-     </ul>  
+    </ul> */ }
+
+
+      
 
        
     </div>
