@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 import axios from "axios"
-import Character from './components/Character'
+import ResidentInfo from './components/ResidentInfo'
 import Location from './components/Location'
 
 
@@ -12,16 +12,7 @@ function App() {
 
  
 
-const [character, setCharacter] = useState([])
 
- useEffect (()=>{
- axios
- .get ("https://rickandmortyapi.com/api/character")
- .then(resp => { console.log(resp.data.results)
-    setCharacter (resp.data.results)}
-    )
- .catch ( error => console.error(error) )
- },[])
 
 
 const [id, setId]= useState ("1")
@@ -53,14 +44,14 @@ const searchId = (e)=>{
 
    <form onSubmit={ (e)=> searchId (e)}>
     
-      <input type="text" placeholder='buscar id' />
+      <input type="text" placeholder='Search location by id' />
       <button>Search</button>
 
     </form>
      
      <ul>
        
-      {url.map((item,indice)=> <li>{item}</li> )}
+      {url.map((item,indice)=> <li key={item} residentData={item}>{item}</li> )}
 
      </ul>
 
