@@ -15,16 +15,19 @@ function App() {
 
 
 
-const [id, setId]= useState ("1")
+const [id, setId]= useState ("2")
 
-const[url, setUrl]=useState([])
+const[arrayResidentUrl, setArrayResidentUrl]=useState([])
+//console.log(arrayResidentUrl);
 
 useEffect (()=>{
 axios
 .get (`https://rickandmortyapi.com/api/location/${id}`)
-.then(resp => {console.log(resp.data)
+.then(resp => {
  setId(resp.data)
-setUrl(resp.data.residents)})
+// console.log(resp.data.residents);
+ 
+setArrayResidentUrl(resp.data.residents)})
 .catch ( error => console.error(error) )
 },[id])
 
@@ -51,28 +54,30 @@ const searchId = (e)=>{
      
      <ul>
        
-      {url.map((item,indice)=> <li key={item} residentData={item}>{item}</li> )}
-
+      {arrayResidentUrl.map((item,indice)=> <li key={item}>{item}</li> )}
+      
+     </ul>
+     <ul>
+      {
+        arrayResidentUrl.map(resident=>(
+          <ResidentInfo key= {resident.name}  residentData = {resident} />
+        ))
+      }
+       
      </ul>
 
+     { /** <ul>
+        {pokemonsArray.map((pokemon) => (
+          <Pokemon key={pokemon.name} pokemonData={pokemon} />
+        ))}
+      </ul>*/
+     
+     }
+     
 
 
 
-
-
-    {/*
-     <ul>
-     {
-            character.map ( character => ( 
-            <Character 
-            key = {character.name}
-            characterdata = {character}
-            />               
-            ))
-
-        }
-        
-    </ul> */ }
+   
 
 
       
