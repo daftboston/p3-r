@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing:border-box;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 
 
@@ -11,7 +11,7 @@
 .App{
     /*codigo funcionando en css background-image: url(./assets/fondo1.png)*/
     display: flex;
-    justify-content: center;
+    
     align-items: center;
     height: 100vh;
     flex-direction: column;
@@ -26,11 +26,13 @@
 .container{
   display: flex;
   padding: 10px;
-  flex-direction: column;  
+  flex-wrap: wrap;
   align-items: center;
   height: 700px;
   justify-content:space-between;
 }
+
+
 
 .title{ 
 

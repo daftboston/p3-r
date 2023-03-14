@@ -52,11 +52,11 @@ const searchId = (e)=>{
 
     </form>
      
-     <ul>
+     {/*<ul>
        
       {arrayResidentUrl.map((item,indice)=> <li key={item}>{item}</li> )}
       
-     </ul>
+     </ul>*/}
      <ul>
       {
         arrayResidentUrl.map(resident=>(
@@ -66,14 +66,7 @@ const searchId = (e)=>{
        
      </ul>
 
-     { /** <ul>
-        {pokemonsArray.map((pokemon) => (
-          <Pokemon key={pokemon.name} pokemonData={pokemon} />
-        ))}
-      </ul>*/
-     
-     }
-     
+    
 
 
 
