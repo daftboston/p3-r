@@ -47,7 +47,9 @@ const searchId = (e)=>{
 
    <form onSubmit={ (e)=> searchId (e)}>
     
-      <input type="text" placeholder='Search location by id' />
+      <input type="number" placeholder='Search location by id' 
+      min="1"
+      max="126"/>
       <button>Search</button>
 
     </form>
@@ -61,7 +63,7 @@ const searchId = (e)=>{
       <div className='container'>
       {
         arrayResidentUrl.map(resident=>(
-          <ResidentInfo key= {resident.name}  residentData = {resident} />
+          <ResidentInfo key= {resident}  residentData = {resident} />
         ))
       }
       </div>

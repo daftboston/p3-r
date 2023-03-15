@@ -11,6 +11,7 @@
 .App{
     /*codigo funcionando en css background-image: url(./assets/fondo1.png)*/
     display: flex;
+    background-image: url();
     
     align-items: center;
     height: 100vh;
