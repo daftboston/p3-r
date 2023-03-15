@@ -58,11 +58,13 @@ const searchId = (e)=>{
       
      </ul>*/}
      <ul>
+      <div className='container'>
       {
         arrayResidentUrl.map(resident=>(
           <ResidentInfo key= {resident.name}  residentData = {resident} />
         ))
       }
+      </div>
        
      </ul>
 
