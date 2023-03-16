@@ -8,6 +8,7 @@ import Location from './components/Location'
 
 
 
+
 function App() {
 
  
@@ -15,7 +16,7 @@ function App() {
 
 
 
-const [id, setId]= useState ("2")
+const [id, setId]= useState ("5")
 
 const[arrayResidentUrl, setArrayResidentUrl]=useState([])
 //console.log(arrayResidentUrl);
@@ -41,45 +42,52 @@ const searchId = (e)=>{
 
 
   return (
-    <div className="App">
-
-        <Location data={id}/>
-
-   <form onSubmit={ (e)=> searchId (e)}>
-    
-      <input type="number" placeholder='Search location by id' 
-      min="1"
-      max="126"/>
-      <button>Search</button>
-
-    </form>
-     
-     {/*<ul>
-       
-      {arrayResidentUrl.map((item,indice)=> <li key={item}>{item}</li> )}
-      
-     </ul>*/}
-     <ul>
-      <div className='container'>
-      {
-        arrayResidentUrl.map(resident=>(
-          <ResidentInfo key= {resident}  residentData = {resident} />
-        ))
-      }
+  <div className="App"
+  >
+    <div className='head'>
+      <div >
+           <img src="" alt="" />
       </div>
+     <div className='form'>
+          <form onSubmit={ (e)=> searchId (e)}>
+    
+           <input type="number" placeholder='Search location by id' 
+           min="1"
+           max="126"/>
+           <button>Search</button>
+
+          </form>
+          <Location data={id}/>
+      </div>
+    </div>
+     
+    <div className='body' >   
+       <ul>
+           <div className='container'>
+                 {
+                   arrayResidentUrl.map(resident=>(
+                     <ResidentInfo key= {resident}  residentData = {resident} />
+                   ))
+                 }
+          </div>
        
-     </ul>
+       </ul>
+     </div>
 
     
 
 
-
+      <div>
+       <img src="" alt="" />
+     </div>
    
 
 
       
 
        
+   
+   
     </div>
   )
 }
