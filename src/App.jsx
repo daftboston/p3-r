@@ -44,11 +44,10 @@ const searchId = (e)=>{
   return (
   <div className="App"
   >
+    <img src="/images/head.png" alt="" />
     <div className='head'>
-      <div >
-           <img src="" alt="" />
-      </div>
-     <div className='form'>
+      
+     <div className='search'>
           <form onSubmit={ (e)=> searchId (e)}>
     
            <input type="number" placeholder='Search location by id' 
@@ -73,13 +72,9 @@ const searchId = (e)=>{
        
        </ul>
      </div>
-
-    
-
-
-      <div>
-       <img src="" alt="" />
-     </div>
+     
+    <img src="/images/bottom.png" alt="" />
+   
    
 
 

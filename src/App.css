@@ -28,14 +28,21 @@
 }
 
 
-
-
-form{
+.head{
   display: flex;
   justify-content: center;
-  padding: 2rem;
-  
+
+}
+
+.search{
  
+  position:absolute;
+  top:80px; 
+ 
+}
+
+img{
+  width: 1800px;
 }
 
 input{
@@ -55,7 +62,11 @@ border-radius: 5px;}
   
 }
 
+.body{
+  position: relative;
+  top:-800px
 
+}
 
 .container{
   display: flex;
@@ -66,7 +77,8 @@ border-radius: 5px;}
   flex-wrap: wrap; 
   justify-content:space-between;
   justify-items: center;
-  background-color: #000000;
+
+  
   
 
 }
